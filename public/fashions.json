@@ -1,0 +1,201 @@
+[
+    {
+        "id": 1,
+        "productName": "Men's Classic Denim Jacket",
+        "category": "man",
+        "description": "This classic denim jacket offers a rugged yet stylish look, perfect for layering. It's a must-have for any casual wardrobe.",
+        "image": "https://i.postimg.cc/d1HRT1gR/download.jpg",
+        "price": 69.99,
+        "stock": true,
+        "rating": 4.8
+    },
+    {
+        "id": 2,
+        "productName": "Women's Elegant Blouse",
+        "category": "woman",
+        "description": "A chic blouse with intricate lace detailing. Perfect for office or evening wear, offering elegance with a touch of sophistication.",
+        "image": "https://i.postimg.cc/ryDZNXgy/woman1.jpg",
+        "price": 34.99,
+        "stock": false,
+        "rating": 4.5
+    },
+    {
+        "id": 3,
+        "productName": "Kids' Graphic T-Shirt",
+        "category": "kids",
+        "description": "Fun, colorful graphic T-shirt for kids, made from breathable cotton. Great for everyday play and school wear, comfortable all day.",
+        "image": "https://i.postimg.cc/wM1X5zdC/kids1.jpg",
+        "price": 14.99,
+        "stock": true,
+        "rating": 4.7
+    },
+    {
+        "id": 4,
+        "productName": "Women's High-Waisted Jeans",
+        "category": "woman",
+        "description": "Flattering high-waisted jeans that offer both style and comfort. These jeans complement any outfit and provide a timeless look.",
+        "image": "https://i.postimg.cc/nVNRdRw4/woman2.jpg",
+        "price": 49.99,
+        "stock": true,
+        "rating": 4.6
+    },
+    {
+        "id": 5,
+        "productName": "Men's Slim-Fit Dress Shirt",
+        "category": "man",
+        "description": "Stylish slim-fit dress shirt, ideal for business or formal occasions. Crafted with breathable fabric for comfort and a polished look.",
+        "image": "https://i.postimg.cc/fRcxf56R/man2.jpg",
+        "stock": false,
+        "rating": 4.3
+    },
+    {
+        "id": 6,
+        "productName": "Kids' Hooded Jacket",
+        "category": "kids",
+        "description": "A warm hooded jacket for kids, perfect for chilly weather. Features a soft lining and playful patterns to keep them cozy.",
+        "image": "https://i.postimg.cc/Gpbv7GCJ/kids2.jpg",
+        "price": 39.99,
+        "stock": true,
+        "rating": 4.6
+    },
+    {
+        "id": 7,
+        "productName": "Women's Wrap Dress",
+        "category": "woman",
+        "description": "An elegant wrap dress that’s perfect for any occasion. The soft fabric and flattering design make it a wardrobe essential.",
+        "image": "https://i.postimg.cc/dtdWg2zz/woman3.jpg",
+        "price": 59.99,
+        "stock": true,
+        "rating": 4.9
+    },
+    {
+        "id": 8,
+        "productName": "Men's Cargo Pants",
+        "category": "man",
+        "description": "Comfortable cargo pants with multiple pockets, combining function and fashion. Perfect for outdoor activities or casual everyday wear.",
+        "image": "https://i.postimg.cc/pdkzgrVN/man3.jpg",
+        "price": 44.99,
+        "stock": false,
+        "rating": 4.4
+    },
+    {
+        "id": 9,
+        "productName": "Kids' Dress Shoes",
+        "category": "kids",
+        "description": "Stylish dress shoes for kids, ideal for formal events. With a sleek design and comfortable fit, they’re great for special occasions.",
+        "image": "https://i.postimg.cc/90sGJkmr/kids4.jpg",
+        "price": 24.99,
+        "stock": true,
+        "rating": 4.5
+    },
+    {
+        "id": 10,
+        "productName": "Women's Trench Coat",
+        "category": "woman",
+        "description": "A timeless trench coat that elevates any outfit. Its classic design and tailored fit make it an ideal choice for cooler seasons.",
+        "image": "https://i.postimg.cc/9Qhx242z/woman4.jpg",
+        "price": 89.99,
+        "stock": true,
+        "rating": 4.8
+    },
+    {
+        "id": 11,
+        "productName": "Men's Beanie Hat",
+        "category": "man",
+        "description": "Soft and warm beanie hat, ideal for cold weather. Its minimalistic design makes it versatile for any casual look.",
+        "image": "https://i.postimg.cc/C5n8B4GY/man4.jpg",
+        "price": 12.99,
+        "stock": true,
+        "rating": 4.2
+    },
+    {
+        "id": 12,
+        "productName": "Kids' Rain Boots",
+        "category": "kids",
+        "description": "Durable rain boots for kids, featuring fun colors and waterproof material. Keeps feet dry while they splash around in style.",
+        "image": "https://i.postimg.cc/440bfY6s/kids5.jpg",
+        "price": 19.99,
+        "stock": false,
+        "rating": 4.7
+    },
+    {
+        "id": 13,
+        "productName": "Women's Leather Boots",
+        "category": "woman",
+        "description": "Stylish leather boots with a sleek design. Perfect for fall and winter, adding elegance and warmth to any outfit.",
+        "image": "https://i.postimg.cc/K8D08Zcf/woman5.jpg",
+        "price": 109.99,
+        "stock": true,
+        "rating": 4.6
+    },
+    {
+        "id": 14,
+        "productName": "Men's Chino Pants",
+        "category": "man",
+        "description": "Classic chino pants, versatile enough for both work and casual outings. Made from comfortable fabric with a tailored fit.",
+        "image": "https://i.postimg.cc/3RRm7hWk/man5.jpg",
+        "price": 39.99,
+        "stock": true,
+        "rating": 4.5
+    },
+    {
+        "id": 15,
+        "productName": "Kids' Winter Coat",
+        "category": "kids",
+        "description": "Warm and cozy winter coat for kids. Features a soft lining and weather-resistant material to keep them comfortable in the cold.",
+        "image": "https://i.postimg.cc/QxWgHjm5/kids6.jpg",
+        "price": 49.99,
+        "stock": true,
+        "rating": 4.8
+    },
+    {
+        "id": 16,
+        "productName": "Women's Maxi Skirt",
+        "category": "woman",
+        "description": "A flowy maxi skirt that can be dressed up or down. Perfect for summer with its lightweight and breathable fabric.",
+        "image": "https://i.postimg.cc/s2fwBtvr/woman6.jpg",
+        "price": 34.99,
+        "stock": false,
+        "rating": 4.4
+    },
+    {
+        "id": 17,
+        "productName": "Men's Formal Vest",
+        "category": "man",
+        "description": "A stylish vest for formal occasions, adding a polished touch to any suit. Perfect for weddings, work, or other formal events.",
+        "image": "https://i.postimg.cc/C1QDx2fm/man6.jpg",
+        "price": 49.99,
+        "stock": true,
+        "rating": 4.6
+    },
+    {
+        "id": 18,
+        "productName": "Kids' Pajama Set",
+        "category": "kids",
+        "description": "A cozy pajama set with fun prints, made from soft cotton to ensure a comfortable night’s sleep for kids of all ages.",
+        "image": "https://i.postimg.cc/VkQqt2Zh/kids7.jpg",
+        "price": 19.99,
+        "stock": false,
+        "rating": 4.9
+    },
+    {
+        "id": 19,
+        "productName": "Women's Cardigan Sweater",
+        "category": "woman",
+        "description": "This cozy cardigan is perfect for layering in cool weather. The soft knit and relaxed fit make it versatile and stylish.",
+        "image": "https://i.postimg.cc/BvhN2MK1/woman7.jpg",
+        "price": 39.99,
+        "stock": true,
+        "rating": 4.7
+    },
+    {
+        "id": 20,
+        "productName": "Men's Casual Jacket",
+        "category": "man",
+        "description": "A versatile casual jacket with a clean, minimal design. Lightweight and stylish, perfect for layering during spring and autumn.",
+        "image": "https://i.postimg.cc/xqrzKb5m/man7.jpg",
+        "price": 59.99,
+        "stock": false,
+        "rating": 4.6
+    }
+]
