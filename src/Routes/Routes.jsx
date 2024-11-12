@@ -5,6 +5,7 @@ import Dashboard from "../Pages/Dashboard/Dashboard";
 import Fashion from "../components/Fashion/Fashion";
 import Fashions from './../Pages/Fashions/Fashions';
 import ProductDetails from "../components/ProductDetails/ProductDetails";
+import AddCart from "../components/AddCart/AddCart";
 
 const router = createBrowserRouter([
     {
@@ -53,6 +54,10 @@ const router = createBrowserRouter([
                 path:'/fashion/:fashionId',
                 element:<ProductDetails/>,
                 loader:()=> fetch('../fashions.json')
+            },
+            {
+                path:'/addCart',
+                element:<AddCart/>
             }
         ]
     }

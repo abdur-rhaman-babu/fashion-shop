@@ -1,12 +1,19 @@
-import { createContext } from "react";
+import { createContext, useState } from "react";
 
-const AuthContext = createContext(null)
+export const AuthContext = createContext(null)
 
-const AuthProvider = () => {
+const AuthProvider = ({children}) => {
+    const name = 'Fashions'
+    const [carts, setCarts] = useState([])
+    const allInfo = {
+        name,
+        carts,
+        setCarts
+    }
     return (
-        <div>
-            
-        </div>
+        <AuthContext.Provider value={allInfo}>
+            {children}
+        </AuthContext.Provider>
     );
 };
 
