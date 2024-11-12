@@ -4,6 +4,7 @@ import Home from "../Pages/Home/Home";
 import Dashboard from "../Pages/Dashboard/Dashboard";
 import Fashion from "../components/Fashion/Fashion";
 import Fashions from './../Pages/Fashions/Fashions';
+import ProductDetails from "../components/ProductDetails/ProductDetails";
 
 const router = createBrowserRouter([
     {
@@ -13,6 +14,23 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home />,
+                loader: ()=> fetch('../fashions.json')
+                // children:[
+                //     {
+                //         path:'category/:category',
+                //         element:<Fashion/>,
+                //         loader: ()=> fetch('../fashions.json')
+                //     },
+                //     {
+                //         path:'/',
+                //         element:<Fashion/>,
+                //         loader: ()=> fetch('../fashions.json')
+                //     }
+                // ]
+            },
+            {
+                path:'/fashions',
+                element:<Fashions/>,
                 loader: () => fetch('../categories.json'),
                 children:[
                     {
@@ -21,19 +39,20 @@ const router = createBrowserRouter([
                         loader: ()=> fetch('../fashions.json')
                     },
                     {
-                        path:'/',
+                        path:'/fashions',
                         element:<Fashion/>,
                         loader: ()=> fetch('../fashions.json')
                     }
                 ]
             },
             {
-                path:'/fashions',
-                element:<Fashions/>
-            },
-            {
                 path: '/dashboard',
                 element: <Dashboard />
+            },
+            {
+                path:'/fashion/:fashionId',
+                element:<ProductDetails/>,
+                loader:()=> fetch('../fashions.json')
             }
         ]
     }

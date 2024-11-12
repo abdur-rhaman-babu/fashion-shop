@@ -46,7 +46,8 @@
         "description": "Stylish slim-fit dress shirt, ideal for business or formal occasions. Crafted with breathable fabric for comfort and a polished look.",
         "image": "https://i.postimg.cc/fRcxf56R/man2.jpg",
         "stock": false,
-        "rating": 4.3
+        "rating": 4.3,
+        "price": 45.99
     },
     {
         "id": 6,

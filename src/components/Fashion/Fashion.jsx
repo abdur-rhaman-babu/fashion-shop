@@ -9,19 +9,26 @@ const Fashion = () => {
   //   console.log(data)
 
   useEffect(() => {
-    const filtered = [...data].filter(
-      (fashion) => fashion.category === category
-    );
-    setFashion(filtered);
+    if (category) {
+      const filtered = [...data].filter(
+        (fashion) => fashion.category === category
+      );
+      setFashion(filtered);
+    } else {
+      setFashion(data);
+    }
   }, [data, category]);
   return (
     <div>
-      <h3 className="text-center my-3 font-bold text-3xl uppercase">{category}</h3>
+      <h3 className="text-center my-3 font-bold text-3xl uppercase">
+        {category ? category : "All Product"}
+      </h3>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
         {fashions.map((fashion) => (
           <Card key={fashion.id} fashion={fashion} />
         ))}
       </div>
+      
     </div>
   );
 };
