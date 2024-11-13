@@ -1,14 +1,15 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import { Link, useNavigate } from "react-router-dom";
 
 const Register = () => {
-  const { createUser } = useContext(AuthContext);
+  const { createUser, emailVerification } = useContext(AuthContext);
   const [password, setPassword] = useState(false);
   const [success, setSuccess] = useState(false);
   const [errorMessage, setErrorMessage] = useState(false);
+  const navigate = useNavigate()
   const handleRegister = (e) => {
     e.preventDefault();
-
     const email = e.target.email.value;
     const password = e.target.password.value;
 
@@ -24,7 +25,12 @@ const Register = () => {
       .then((result) => {
         setSuccess("Registered Successfully");
         console.log(result.user);
+        emailVerification()
+        .then(()=>{
+          alert('Sent a verification Email')
+        })
         e.target.reset();
+        navigate('/')
       })
       .catch(() => {
         setErrorMessage("User already Exsits");
@@ -72,6 +78,10 @@ const Register = () => {
             <button className="btn btn-primary">Register</button>
           </div>
         </form>
+        <div className="flex items-center justify-center mb-4">
+          <p>Already Have an account?</p>
+        <Link to='/login'><span className="text-blue-700 hover:underline">Login</span></Link>
+        </div>
       </div>
     </div>
   );

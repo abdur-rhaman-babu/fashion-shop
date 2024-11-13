@@ -1,8 +1,15 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const { signInUser } = useContext(AuthContext);
+  const { signInUser, user } = useContext(AuthContext);
+  const navigate = useNavigate()
+  const [isUser, setIsUser] = useState(false)
+
+  if(!isUser){
+    setIsUser('User not found')
+  }
   const handleLogin = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
@@ -11,6 +18,7 @@ const Login = () => {
     .then((result)=>{
       console.log(result.user)
       e.target.reset()
+      navigate('/')
     })
     .catch((error)=>{
       console.log("ERROR", error.message)
@@ -53,6 +61,12 @@ const Login = () => {
           <div className="form-control mt-6">
             <button className="btn btn-primary">Login</button>
           </div>
+          <p>{isUser}</p>
+        <div className="flex items-center">
+          <p>Don't have an accout?</p>
+        <Link to='/register'><span className="text-blue-700 hover:underline">Register Now</span>
+        </Link>
+        </div>
         </form>
       </div>
     </div>

@@ -1,16 +1,16 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { TiShoppingCart } from "react-icons/ti";
 import { CiHeart } from "react-icons/ci";
 import { useContext } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 const Navbar = () => {
   const { name, carts, user, signOutUser } = useContext(AuthContext);
-
+  const navigate = useNavigate()
   const handleSignOut = () =>{
-    console.log('signout')
     signOutUser()
     .then(()=>{
-      alert('sign out successfull')
+      alert('sign out successfully')
+      navigate('/')
     })
     .catch(error=>{
       console.log('ERROR', error.message)
@@ -50,9 +50,6 @@ const Navbar = () => {
               </li>
               <li>
                 <NavLink to="/dashboard">Dashboard</NavLink>
-              </li>
-              <li>
-                <NavLink to="/register">Register</NavLink>
               </li>
               <div>
               {user ? (
