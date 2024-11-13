@@ -4,7 +4,19 @@ import { CiHeart } from "react-icons/ci";
 import { useContext } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 const Navbar = () => {
-  const { name, carts } = useContext(AuthContext);
+  const { name, carts, user, signOutUser } = useContext(AuthContext);
+
+  const handleSignOut = () =>{
+    console.log('signout')
+    signOutUser()
+    .then(()=>{
+      alert('sign out successfull')
+    })
+    .catch(error=>{
+      console.log('ERROR', error.message)
+    })
+  }
+
   return (
     <div className="backdrop-blur opacity-95 fixed top-0 left-0 right-0 z-50">
       <div className="navbar bg-base-100 shadow-lg">
@@ -40,11 +52,28 @@ const Navbar = () => {
                 <NavLink to="/dashboard">Dashboard</NavLink>
               </li>
               <li>
-              <NavLink to="/register">Register</NavLink>
-            </li>
-            <li>
-              <NavLink to="/login">Login</NavLink>
-            </li>
+                <NavLink to="/register">Register</NavLink>
+              </li>
+              <div>
+              {user ? (
+                ""
+              ) : (
+                <li>
+                  <NavLink to="/register">Register</NavLink>
+                </li>
+              )}
+            </div>
+            <div>
+              {user ? (
+                <li>
+                  <button onClick={handleSignOut}>Sign Out</button>
+                </li>
+              ) : (
+                <li>
+                  <NavLink to="/login">Login</NavLink>
+                </li>
+              )}
+            </div>
             </ul>
           </div>
           <a className="btn btn-ghost text-xl">{name}</a>
@@ -60,15 +89,30 @@ const Navbar = () => {
             <li>
               <NavLink to="/dashboard">Dashboard</NavLink>
             </li>
-            <li>
-              <NavLink to="/register">Register</NavLink>
-            </li>
-            <li>
-              <NavLink to="/login">Login</NavLink>
-            </li>
+            <div>
+              {user ? (
+                ""
+              ) : (
+                <li>
+                  <NavLink to="/register">Register</NavLink>
+                </li>
+              )}
+            </div>
+            <div>
+              {user ? (
+                <li>
+                <button onClick={handleSignOut}>Sign Out</button>
+              </li>
+              ) : (
+                <li>
+                  <NavLink to="/login">Login</NavLink>
+                </li>
+              )}
+            </div>
           </ul>
         </div>
         <div className="navbar-end space-x-3">
+          <div>{user?.email}</div>
           <Link to="/addCart">
             <button className="p-2 border rounded-full relative">
               <TiShoppingCart />
