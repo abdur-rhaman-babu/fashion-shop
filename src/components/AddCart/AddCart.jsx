@@ -3,11 +3,16 @@ import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { FaRegTimesCircle } from "react-icons/fa";
 
 const AddCart = () => {
-  const { carts } = useContext(AuthContext);
-  // const { productName, image, price, stock, description } = cart;
-  console.log(carts);
+  const { carts, setCarts } = useContext(AuthContext);
+//   console.log(carts);
+
+  const handleRemoveFromCart = (id) =>{
+        const remaining = carts.filter(cart=> cart.id !==id)
+        setCarts(remaining)
+  }
+
   return (
-    <div>
+    <div className="space-y-5 my-5">
       {carts.map((cart) => (
         <div key={cart.id}>
           <div className="border flex gap-5 border-blue-300 p-4 rounded-lg space-y-3 shadow-lg">
@@ -29,7 +34,10 @@ const AddCart = () => {
                 </p>
               </div>
             </div>
-            <div className="font-bold text-3xl cursor-pointer">
+            <div
+              onClick={() => handleRemoveFromCart(cart.id)}
+              className="font-bold text-3xl cursor-pointer"
+            >
               <FaRegTimesCircle />
             </div>
           </div>

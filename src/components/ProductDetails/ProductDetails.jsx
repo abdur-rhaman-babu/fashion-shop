@@ -1,28 +1,32 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { FaRegTimesCircle } from "react-icons/fa";
 import { useLoaderData, useNavigate, useParams } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 const ProductDetails = () => {
   const { carts, setCarts } = useContext(AuthContext);
-//   console.log(cart)
+  const [fashion, setFashion] = useState({})
   const { fashionId } = useParams();
   const id = parseInt(fashionId);
   const fashions = useLoaderData();
-  const fashion = fashions.find((fashion) => fashion.id === id);
-//   console.log(fashion);
+  
+  useEffect(()=>{
+    const currentFashion = fashions.find(fashion=> fashion.id === id)
+    setFashion(currentFashion)
+  },[fashions, id])
+
   const navigate = useNavigate();
 
   const { productName, image, price, stock, description } = fashion;
 
-    const isExsits = carts.find(cart=> cart.id === id)
-  const handleAddToCart = (fashion) =>{
-        if(!isExsits){
-            setCarts([...carts, fashion])
-        }else{
-            alert('Already Exsits')
-        }
-  }
+  const isExsits = carts.find((cart) => cart.id === id);
+  const handleAddToCart = (fashion) => {
+    if (!isExsits) {
+      setCarts([...carts, fashion]);
+    } else {
+      alert("Already Exsits");
+    }
+  };
   return (
     <div>
       <div className="border flex gap-5 border-blue-300 p-4 rounded-lg space-y-3 shadow-lg">
@@ -44,9 +48,12 @@ const ProductDetails = () => {
             </p>
           </div>
           <button
+            disabled={!stock}
             onClick={() => handleAddToCart(fashion)}
             className={`font-bold py-2 px-4
-           rounded-lg bg-blue-700 text-white`}
+            rounded-lg
+            ${!stock && "bg-gray-300 text-gray-500"}
+            bg-blue-700 text-white`}
           >
             Add to cart
           </button>

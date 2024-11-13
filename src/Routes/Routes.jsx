@@ -6,6 +6,8 @@ import Fashion from "../components/Fashion/Fashion";
 import Fashions from './../Pages/Fashions/Fashions';
 import ProductDetails from "../components/ProductDetails/ProductDetails";
 import AddCart from "../components/AddCart/AddCart";
+import Login from "../Pages/Login/Login";
+import Register from "../Pages/Register/Register";
 
 const router = createBrowserRouter([
     {
@@ -32,17 +34,17 @@ const router = createBrowserRouter([
             {
                 path:'/fashions',
                 element:<Fashions/>,
-                loader: () => fetch('../categories.json'),
+                loader: () => fetch('/categories.json'),
                 children:[
                     {
                         path:'category/:category',
                         element:<Fashion/>,
-                        loader: ()=> fetch('../fashions.json')
+                        loader: ()=> fetch('/fashions.json')
                     },
                     {
                         path:'/fashions',
                         element:<Fashion/>,
-                        loader: ()=> fetch('../fashions.json')
+                        loader: ()=> fetch('/fashions.json')
                     }
                 ]
             },
@@ -53,11 +55,19 @@ const router = createBrowserRouter([
             {
                 path:'/fashion/:fashionId',
                 element:<ProductDetails/>,
-                loader:()=> fetch('../fashions.json')
+                loader:()=> fetch('/fashions.json')
             },
             {
                 path:'/addCart',
                 element:<AddCart/>
+            }, 
+            {
+                path:'/login',
+                element:<Login/>
+            },
+            {
+                path:'/register',
+                element:<Register/>
             }
         ]
     }
